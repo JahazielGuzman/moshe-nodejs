@@ -1,9 +1,7 @@
-const logger = require('./logger');
+const fs = require('fs');
 
-function sayHello(name) {
-	console.log('hello ' + name);
-}
+fs.readdir('./', function (err, files) {
 
-sayHello("john");
-
-console.log(logger)
+	if (err) console.log('Error', err);
+	else console.log('Files', files);
+});
